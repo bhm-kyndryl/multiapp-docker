@@ -5,24 +5,24 @@ services:
   - docker
 
 before_install:
-  - docker build -t bhm-kyndryl/multiapp-docker-testbuild -f ./client/Dockerfile.dev ./client
+  - docker build -t bhmkyndryl/multiapp-docker-testbuild -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true bhm-kyndryl/multiapp-docker-testbuild npm run test
+  - docker run -e CI=true bhmkyndryl/multiapp-docker-testbuild npm run test
 
 
 after_success:
-  - docker build -t bhm-kyndryl/multiapp-client ./client
-  - docker build -t bhm-kyndryl/multiapp-nginx ./nginx
-  - docker build -t bhm-kyndryl/multiapp-server ./server
-  - docker build -t bhm-kyndryl/multiapp-worker ./worker
+  - docker build -t bhmkyndryl/multiapp-client ./client
+  - docker build -t bhmkyndryl/multiapp-nginx ./nginx
+  - docker build -t bhmkyndryl/multiapp-server ./server
+  - docker build -t bhmkyndryl/multiapp-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push bhm-kyndryl/multiapp-client
-  - docker push bhm-kyndryl/multiapp-nginx
-  - docker push bhm-kyndryl/multiapp-server
-  - docker push bhm-kyndryl/multiapp-worker
+  - docker push bhmkyndryl/multiapp-client
+  - docker push bhmkyndryl/multiapp-nginx
+  - docker push bhmkyndryl/multiapp-server
+  - docker push bhmkyndryl/multiapp-worker
 
 
 # deploy:
