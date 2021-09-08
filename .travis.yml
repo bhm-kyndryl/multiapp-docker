@@ -19,13 +19,12 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push bhm-kyndryl/multiapp-client
-  - docker push bhm-kyndryl/multiapp-nginx
-  - docker push bhm-kyndryl/multiapp-server
-  - docker push bhm-kyndryl/multiapp-worker
+  - docker push bhmkyndryl/multiapp-client
+  - docker push bhmkyndryl/multiapp-nginx
+  - docker push bhmkyndryl/multiapp-server
+  - docker push bhmkyndryl/multiapp-worker
 
 
-# Hmmm
 # deploy:
   # provider: elasticbeanstalk
   # region: "eu-west-3"
