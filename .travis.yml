@@ -24,7 +24,7 @@ after_success:
   - docker push bhmkyndryl/multiapp-server
   - docker push bhmkyndryl/multiapp-worker
 
-
+# Hum, wake up please !
 # deploy:
   # provider: elasticbeanstalk
   # region: "eu-west-3"
