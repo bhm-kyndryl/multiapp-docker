@@ -25,15 +25,15 @@ after_success:
   - docker push bhmkyndryl/multiapp-worker
 
 # Hum, wake up please !
-# deploy:
-  # provider: elasticbeanstalk
-  # region: "eu-west-3"
-  # app: "docker-react"
-  # env: "Dockerreact-env"
-  # bucket_name: "elasticbeanstalk-eu-west-3-015806071036"
-  # bucket_path: "docker-react"
-  # on:
-    # branch: main
-  # access_key_id: $AWS_ACCESS_KEY
-  # secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "multiapp"
+  env: "Multiapp-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-015806071036"
+  bucket_path: "multiapp-bucket"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
    
